@@ -22,7 +22,9 @@ class UserController {
         ApiError.badRequest('Пользователь с таким email уже существует')
       )
     }
-    const hashPassword = await bcrypt.hash(password, 5)
+
+    let pass = password.toString()
+    const hashPassword = await bcrypt.hash(pass, 5)
     const user = await User.create({ email, role, password: hashPassword })
     const basket = await Basket.create({ userId: user.id })
     const token = generateJwt(user.id, user.email, user.role)
@@ -35,6 +37,7 @@ class UserController {
     if (!user) {
       return next(ApiError.internal('Пользователь с таким именем не найдем'))
     }
+
     let comparePassword = bcrypt.compareSync(password, user.password)
     if (!comparePassword) {
       return next(ApiError.internal('Указан неверный пароль'))
@@ -44,11 +47,9 @@ class UserController {
   }
 
   async check(reg, res, next) {
-    // const { id } = reg.query
-    // if (!id) {
-    //   return next(ApiError.badRequest('не задан ID'))
-    // }
-    // res.json(id)
+    //  const token = generateJwt(reg.user.id, reg.user.email, reg.user.role)
+    //  return res.json({ token })
+    res.json({ message: 'Есть контакт' })
   }
 }
 
