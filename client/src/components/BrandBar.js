@@ -7,7 +7,7 @@ const BrandBar = observer(() => {
   const { device } = useContext(Context)
 
   return (
-    <Form className="d-flex">
+    <Form className="d-flex flex-wrap">
       {device.brands.map((brand) => (
         <Card
           style={{ cursor: 'pointer' }}

@@ -45,6 +45,34 @@ export default class DeviceStore {
         rating: 5,
         img: `https://www.purposechurch.com/wp-content/uploads/2017/18/fpo400x300.png`,
       },
+      {
+        id: 5,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: `https://www.purposechurch.com/wp-content/uploads/2017/18/fpo400x300.png`,
+      },
+      {
+        id: 6,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: `https://www.purposechurch.com/wp-content/uploads/2017/18/fpo400x300.png`,
+      },
+      {
+        id: 7,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: `https://www.purposechurch.com/wp-content/uploads/2017/18/fpo400x300.png`,
+      },
+      {
+        id: 8,
+        name: 'Iphone 12 pro',
+        price: 25000,
+        rating: 5,
+        img: `https://www.purposechurch.com/wp-content/uploads/2017/18/fpo400x300.png`,
+      },
     ]
     this._selectedType = {}
     this._selectedBrand = {}
