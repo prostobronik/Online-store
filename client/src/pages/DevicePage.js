@@ -10,6 +10,13 @@ const DevicePage = () => {
     rating: 5,
     img: `https://www.purposechurch.com/wp-content/uploads/2017/18/fpo400x300.png`,
   }
+  const description = [
+    { id: 1, title: 'Оперативная память', description: '5 гб' },
+    { id: 2, title: 'Камера', description: '12 мп' },
+    { id: 3, title: 'Процессор', description: 'Пентиум' },
+    { id: 4, title: 'Кол-во ядер', description: '2' },
+    { id: 5, title: 'Аккумулятор', description: '5000' },
+  ]
 
   return (
     <Container className="mt-3">
@@ -48,6 +55,20 @@ const DevicePage = () => {
             <Button variant={'outline-dark'}>Добавить в корзину</Button>
           </Card>
         </Col>
+      </Row>
+      <Row className="d-flex flex=column m-3">
+        <h1>Характеристики</h1>
+        {description.map((info, index) => (
+          <Row
+            key={info.id}
+            style={{
+              background: index % 2 === 0 ? 'lightgray' : 'transparent',
+              padding: 10,
+            }}
+          >
+            {info.title} : {info.description}
+          </Row>
+        ))}
       </Row>
     </Container>
   )
