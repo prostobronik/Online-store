@@ -47,9 +47,8 @@ class UserController {
   }
 
   async check(reg, res, next) {
-    //  const token = generateJwt(reg.user.id, reg.user.email, reg.user.role)
-    //  return res.json({ token })
-    res.json({ message: 'Есть контакт' })
+    const token = generateJwt(reg.user.id, reg.user.email, reg.user.role)
+    return res.json({ token })
   }
 }
 

@@ -38,6 +38,7 @@ class DeviceController {
     let { brandId, typeId, limit, page } = reg.query
     page = page || 1
     limit = limit || 9
+    limit = Number(limit)
     let offset = page * limit - limit
     let devices
     if (!brandId && !typeId) {
